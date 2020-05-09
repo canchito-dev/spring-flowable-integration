@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.7.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.canchitodev.example</groupId>
+	<artifactId>spring-flowable-integration</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>spring-flowable-integration</name>
+	<description>Demo project for Spring Boot using Flowable BPM</description>
+
+	<organization>
+		<name>Canchito Development</name>
+		<url>http://www.canchito-dev.com</url>
+	</organization>
+
+	<issueManagement>
+		<system>Canchito Development</system>
+		<url>https://github.com/canchito-dev/spring-flowable-integration/issues</url>
+	</issueManagement>
+
+	<url>https://github.com/canchito-dev/spring-flowable-integration</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<flowable.version>6.5.0</flowable.version>
+	</properties>
+
+	<dependencies>
+		<!-- Starter for building web, including RESTful, applications using Spring MVC. Uses Tomcat as the default embedded container -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- Starter for building web, including RESTful, applications using Spring MVC. Uses Tomcat as the default embedded container -->
+
+		<!-- H2 Database Engine -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- H2 Database Engine -->
+
+		<!-- Starter for using Tomcat as the embedded servlet container. Default servlet container starter used by spring-boot-starter-web -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Starter for using Tomcat as the embedded servlet container. Default servlet container starter used by spring-boot-starter-web -->
+
+		<!-- Starter for testing Spring Boot applications with libraries including JUnit, Hamcrest and Mockito -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- Starter for testing Spring Boot applications with libraries including JUnit, Hamcrest and Mockito -->
+
+		<!-- Flowable Spring Boot Starter Basic -->
+		<dependency>
+			<groupId>org.flowable</groupId>
+			<artifactId>flowable-spring-boot-starter-basic</artifactId>
+			<version>${flowable.version}</version>
+		</dependency>
+		<!-- Flowable Spring Boot Starter Basic -->
+
+		<!-- Flowable Spring Boot Starter Rest Api -->
+		<dependency>
+			<groupId>org.flowable</groupId>
+			<artifactId>flowable-spring-boot-starter-rest</artifactId>
+			<version>${flowable.version}</version>
+		</dependency>
+		<!-- Flowable Spring Boot Starter Rest Api -->
+
+		<!-- Flowable Spring Boot Starter Actuator -->
+		<dependency>
+			<groupId>org.flowable</groupId>
+			<artifactId>flowable-spring-boot-starter-actuator</artifactId>
+			<version>${flowable.version}</version>
+		</dependency>
+		<!-- Flowable Spring Boot Starter Actuator -->
+
+		<!-- Starter for using Spring Boot's Actuator which provides production ready features to help you monitor and manage your application -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- Starter for using Spring Boot's Actuator which provides production ready features to help you monitor and manage your application -->
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
