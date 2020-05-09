@@ -66,7 +66,6 @@ The following listing shows the `pom.xml` file that is created when you choose M
 		<dependency>  
 			<groupId>org.springframework.boot</groupId>  
 			<artifactId>spring-boot-starter-tomcat</artifactId>  
-			<scope>provided</scope>  
 		</dependency>  
 		<!-- Starter for using Tomcat as the embedded servlet container. Default servlet container starter used by spring-boot-starter-web -->  
 
@@ -158,7 +157,7 @@ You will see an output like this:
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.2.7.RELEASE)
 
-2020-05-08 13:37:02.325  INFO 9935 --- [           main] e.s.SpringFlowableIntegrationApplication : Starting SpringFlowableIntegrationApplication on MacBook-Pro-de-Jose.local with PID 9935 (/Users/jose.carlos.mendoza.prego/Downloads/spring-flowable-integration/target/classes started by jose.carlos.mendoza.prego in /Users/jose.carlos.mendoza.prego/Downloads/spring-flowable-integration)
+2020-05-08 13:37:02.325  INFO 9935 --- [           main] e.s.SpringFlowableIntegrationApplication : Starting SpringFlowableIntegrationApplication on MacBook-Pro.local with PID 9935 (/Users/canchitodev/development/spring-flowable-integration/target/classes started by jose.carlos.mendoza.prego in /Users/jose.carlos.mendoza.prego/Downloads/spring-flowable-integration)
 2020-05-08 13:37:02.327  INFO 9935 --- [           main] e.s.SpringFlowableIntegrationApplication : No active profile set, falling back to default profiles: default
 2020-05-08 13:37:02.993  INFO 9935 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
 2020-05-08 13:37:02.999  INFO 9935 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
@@ -444,7 +443,7 @@ Once you log in, you will be able to explore the database and execute queries.
 
 ![H2 Console main](images/h2_console.png)
 
-## Changing the database and connection pool
+## Changing the database
 To change the datasource, simply add the database driver dependencies and provide the URL to the database. For example, to switch to a MySQL database:
 
 ```
