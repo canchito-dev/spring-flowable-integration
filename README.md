@@ -1,4 +1,4 @@
-# spring-boot-flowable-bpm-integra
+# spring-boot-flowable-bpm-integration
 
 In this tutorial, we will be integrating Flowable's BPM engine into our Spring Boot application.
 
@@ -415,3 +415,53 @@ Now, let's test Flowable's endpoint `actuator/flowable`
 And finally, the `actuator/health` endpoint:
 
 ![Actuator's Health Endpoint](images/health_actuator_endpoint.png)
+
+## Enable H2 Database Web Console
+Until this moment, we have been using an in-memory H2 database. Lucky us, it has a web console that we can easily access. As you, by design, the in-memory database is volatile and data will be lost when we restart the application.
+
+In order to enable H2 Console, add the following properties into your `application.properties` file:
+
+```
+spring.h2.console.enabled=true  
+spring.h2.console.path=/h2-console  
+spring.h2.console.settings.trace=true
+```
+
+By default, Spring Boot configures the application to **connect to an in-memory store with the username  _sa_  and an empty password**. However, we can change those parameters by adding the following properties to the `application.properties` file:
+
+```
+spring.datasource.username=flowable  
+spring.datasource.password=flowable  
+spring.datasource.url=jdbc:h2:~/flowable-db/db  
+spring.datasource.driver-class-name=org.h2.Driver
+```
+
+Now restart your application and go to http://localhost:8080/h2-console. You should see some the log in page.
+
+![H2 Console login](images/h2_console_login.png)
+
+Once you log in, you will be able to explore the database and execute queries.
+
+![H2 Console main](images/h2_console.png)
+
+## Changing the database and connection pool
+To change the datasource, simply add the database driver dependencies and provide the URL to the database. For example, to switch to a MySQL database:
+
+```
+spring.datasource.username=flowable  
+spring.datasource.password=flowable  
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://mysql-db:3306/flowable?characterEncoding=UTF-8
+```
+
+Remove H2 from the Maven dependencies and add the MySQL driver to the classpath:
+
+```xml  
+<!-- Databases  MySQL JDBC Type 4 drive -->  
+<dependency>
+	<groupId>mysql</groupId>  
+	<artifactId>mysql-connector-java</artifactId>  
+	<scope>runtime</scope>  
+</dependency>  
+<!-- Databases  MySQL JDBC Type 4 drive -->  
+``` 
