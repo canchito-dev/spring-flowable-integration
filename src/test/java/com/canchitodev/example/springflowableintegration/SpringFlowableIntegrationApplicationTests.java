@@ -102,7 +102,7 @@ class SpringFlowableIntegrationApplicationTests {
 		// Make sure the process has ended
 		await().atMost(30L, TimeUnit.SECONDS).until(
 				() -> this.historyService.createHistoricProcessInstanceQuery()
-						.processInstanceId(processInstance.getId())
+						.processInstanceId(processInstance.getProcessInstanceId())
 						.finished()
 						.singleResult() != null
 		);
