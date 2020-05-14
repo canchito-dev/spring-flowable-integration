@@ -60,7 +60,7 @@ class SpringFlowableIntegrationApplicationTests {
 	private HistoryService historyService;
 
 	@Test
-	@Deployment(resources = "processes/one-task-process.bpmn20.bpmn")
+	@Deployment(resources = "processes/one-task-process.bpmn20.xml")
 	void simpleTestIncludingTaskVariables() {
 		// Start a new process instance
 		ProcessInstance processInstance = this.runtimeService.startProcessInstanceByKey("oneTaskProcess");
