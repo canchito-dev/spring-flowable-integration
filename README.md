@@ -489,3 +489,11 @@ Remove H2 from the Maven dependencies and add the MySQL driver to the classpath:
 </dependency>  
 <!-- Databases  MySQL JDBC Type 4 drive -->  
 ``` 
+
+## Summary
+
+In this post, we have shown how to integrate Flowable into your Spring Boot application. We hope that, even though this was a very basic introduction, you understood how to use and configure them. We will try to go deeper into Flowable in upcoming posts.
+
+Please feel free to contact us. We will gladly response to any doubt or question you might have.
+
+Source code can be found in our [GitHub](https://github.com/canchito-dev/spring-flowable-integration) repository.
