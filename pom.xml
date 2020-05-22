@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.canchitodev.example</groupId>
 	<artifactId>spring-flowable-integration</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>war</packaging>
 
 	<name>spring-flowable-integration</name>
@@ -53,6 +53,14 @@
 			<scope>runtime</scope>
 		</dependency>
 		<!-- H2 Database Engine -->
+
+		<!-- MySQL Database Engine -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- MySQL Database Engine -->
 
 		<!-- Starter for using Tomcat as the embedded servlet container. Default servlet container starter used by spring-boot-starter-web -->
 		<dependency>
@@ -137,6 +145,17 @@
 		<dependency>
 			<groupId>org.awaitility</groupId>
 			<artifactId>awaitility</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>

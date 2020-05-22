@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2020 nexiles GmbH.  All rights reserved.
+  -->
+
+<definitions
+        xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+        xmlns:flowable="http://flowable.org/bpmn"
+        targetNamespace="Examples">
+
+    <process id="eventTest" name="Process to test events">
+        <startEvent id="theStart" >
+            <extensionElements>
+                <flowable:eventType xmlns:flowable="http://flowable.org/bpmn">carparkEnter</flowable:eventType>
+                <flowable:eventOutParameter xmlns:flowable="http://flowable.org/bpmn"
+                                            source="vehicleNumber"
+                                            sourceType="string"
+                                            target="vehicleNumber"/>
+                <flowable:eventOutParameter xmlns:flowable="http://flowable.org/bpmn"
+                                            source="carpark"
+                                            sourceType="string"
+                                            target="carpark"/>
+            </extensionElements>
+        </startEvent>
+        <sequenceFlow id="flow1" sourceRef="theStart" targetRef="theTask" />
+        <serviceTask id="theTask" name="event test task" flowable:delegateExpression="${testTask}" flowable:async="true"
+        />
+        <sequenceFlow id="flow2" sourceRef="theTask" targetRef="theEnd" />
+        <endEvent id="theEnd" />
+    </process>
+
+</definitions>

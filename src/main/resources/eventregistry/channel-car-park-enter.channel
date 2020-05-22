@@ -1,0 +1,12 @@
+{
+  "key": "carparkenterChannel",
+  "name": "Carpark Enter channel",
+  "description": "Carpark Enter Channel",
+  "channelType": "inbound",
+  "type": "kafka",
+  "deserializerType": "json",
+  "channelEventKeyDetection": {
+    "fixedValue": "carparkEnter"
+  },
+  "topics": ["LPRS_CARPARK_ENTER_JSON"]
+}

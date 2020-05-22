@@ -1,0 +1,18 @@
+{
+  "key": "carparkEnter",
+  "name": "Carpark Enter",
+  "inboundChannelKeys": [
+    "carparkenterChannel"
+  ],
+  "correlationParameters": [],
+  "payload": [
+    {
+      "name": "vehicleNumber",
+      "type": "string"
+    },
+    {
+      "name": "carpark",
+      "type": "string"
+    }
+  ]
+}
